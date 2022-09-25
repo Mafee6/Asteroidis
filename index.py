@@ -1,6 +1,18 @@
 # Author: Mafee7
 # Github: https://github.com/mafee6
 
+#  Copyright Mafee 2022
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+
+#      http://www.apache.org/licenses/LICENSE-2.0
+
+#  Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
 
 # Depenancies: pandas, requests, zipfile, sklearn
 import requests, zipfile as zip , pandas as pd
@@ -56,32 +68,22 @@ def main () :
         print(pre + "Showing information about the data.")
         print(frame.info())
 
-    try:
+    x = frame[0:100][["diameter"]]
+    x = x.dropna()
 
-        x = frame[0:100][["diameter"]]
-        x = x.dropna()
+    y = frame["name"][0:100]
+    y = y.dropna()
 
-        y = frame["name"][0:100]
-        y = y.dropna()
+    knn = KnnClass()
+    mod = knn.fit(x, y)
 
-        knn = KnnClass()
-        mod = knn.fit(x, y)
+    predictionFrame = pd.DataFrame()
+    predictionFrame["diameter"] = [400, 600]
 
-        predictionFrame = pd.DataFrame()
-        predictionFrame["diameter"] = [400, 600]
-
-        prediction = mod.predict(predictionFrame)
-        
-        if prediction:
-            print(pre + prediction[0] + "may cause huge destruction because of its diameter.")
-        else:
-            print(preER + "Nothing Was predicted.")
-
-    except:
-        print(preER + "An error occured while prediction.")
-        dbg = open("debug.txt", "w")
-        dbg.write(str(sys.exc_info()))
-        astrStop(3)
+    print(pre + "Starting Prediction!")
+    prediction = mod.predict(predictionFrame)
+    print(pre + "Prediction Complete!")
+    print(pre + prediction[0] + "may cause huge destruction because of its diameter.")
 
 detected = False
 
