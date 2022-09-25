@@ -14,7 +14,7 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-# Depenancies: pandas, requests, zipfile, sklearn
+# Dependencies: pandas, requests, zipfile, sklearn
 import requests, zipfile as zip , pandas as pd
 from sklearn.neighbors import KNeighborsClassifier as KnnClass
 from io import BytesIO, StringIO
