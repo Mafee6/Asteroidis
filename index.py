@@ -83,7 +83,7 @@ def main () :
     print(pre + "Starting Prediction!")
     prediction = mod.predict(predictionFrame)
     print(pre + "Prediction Complete!")
-    print(pre + prediction[0] + "may cause huge destruction because of its diameter.")
+    print(pre + prediction[0] + " may cause huge destruction because of its diameter.")
 
 detected = False
 
