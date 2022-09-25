@@ -17,7 +17,7 @@
 # Dependencies: pandas, requests, zipfile, sklearn
 import requests, zipfile as zip , pandas as pd
 from sklearn.neighbors import KNeighborsClassifier as KnnClass
-from io import BytesIO, StringIO
+from io import BytesIO
 import os, sys
 os.system("") # for colored output
 
