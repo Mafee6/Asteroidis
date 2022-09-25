@@ -18,7 +18,7 @@
 import requests, zipfile as zip , pandas as pd
 from sklearn.neighbors import KNeighborsClassifier as KnnClass
 from io import BytesIO, StringIO
-import os, json, sys
+import os, sys
 os.system("") # for colored output
 
 pre = "\u001b[38;2;67;113;214m[Asteroidis]\033[0m "
