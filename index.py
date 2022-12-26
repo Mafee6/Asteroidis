@@ -33,8 +33,9 @@ def astrStop (exitCode = None) :
     quit()
 
 def downloadDataset () :
-    datasetURL = "https://storage.googleapis.com/kaggle-data-sets/689444/4217054/compressed/dataset.csv.zip?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20220923%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20220923T144431Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=17c507972bb6eacb4279fe56f3cacfca7afdaebf98d6e64d31d9d6c3ff9765c24779a618e99f116cbd1256970b82df66379c2ff6dda465ec04b1b88fe95bc9d4482703390cc36ae473bc36760391455f8697a717402868e10fcc91d21b829b9790ec34048911d8ff735d8972227a116714126776eca5f83a55c86fa80296a5cb56ac630c176fbeebbd40ed6d710fecb18f01ef0ca5e9f848da6d29631d113b19f94b6d6afe71391416b1b00cd27ea79628c24bb9b7d8f75e67a5abcc206e133c34b758da4f7bd404c7c66d3327437dc8959bea8d8656fdad0840478ab7a1e61a8689e8e105fb364a83000f94d81530ead34d2f3827078c95fe409800d34dc047"
-    print(pre + "Downloading dataset. You can also download it manually from Kaggle.com")
+    datasetURL = "https://gitlab.com/mirsakhawathossain/pha-ml/-/raw/master/Dataset/dataset.csv"
+    print(pre + "Downloading dataset. You can also download it manually from Kaggle.com")   
+
     allowDownload = input(pre + "Do you want to Download the Asteroid Dataset from Kaggle.com (400mb +) (y / n): ")
 
     if(allowDownload.lower() != "y"):
